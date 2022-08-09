@@ -1,0 +1,781 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Module7\_Homework.R},
+  pdfauthor={mmhan\_uricwmy},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Module7\_Homework.R}
+\author{mmhan\_uricwmy}
+\date{2022-08-08}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# =====================================================}
+\CommentTok{\# Module 7 Homework {-} Logistic Regression}
+\CommentTok{\#                     }
+\CommentTok{\# Mike Hankinson}
+\CommentTok{\# November 12, 2021}
+\CommentTok{\# =====================================================}
+
+\CommentTok{\# Given: }
+\CommentTok{\# {-} Assignment7.csv: Student GRE scores and GPA and a binary column indicating whether they }
+\CommentTok{\#   were admitted to a certain university. }
+
+\CommentTok{\# Pre{-}processing:}
+\CommentTok{\# a.    Load in the data. }
+\CommentTok{\# b.    GRE and GPA are measure on significantly different scales. }
+\CommentTok{\#     To allow us to interpret these variables on the same range, scale both variables using }
+\CommentTok{\#     standardization. This means each variable will have a mean of 0 and a standard }
+\CommentTok{\#     deviation of 1. }
+\CommentTok{\# c.    Set the dependent variable "admit" as a factor variable and perform logistic regression }
+\CommentTok{\#     with two predictors: GRE and GPA. }
+
+\CommentTok{\# Questions: }
+\CommentTok{\# 7 questions defined and answered throughout the code. }
+
+
+\CommentTok{\# ******************************************}
+\CommentTok{\# Pre{-}processing }
+\CommentTok{\# ******************************************}
+
+\CommentTok{\# a. Load and Plot Data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data of 400 Students}
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Assignment7.csv"}\NormalTok{)}
+\FunctionTok{names}\NormalTok{(dat)      }\CommentTok{\# [1] "admit" "GRE"   "GPA"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "admit" "GRE"   "GPA"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   admit GRE  GPA
+## 1     0 380 3.61
+## 2     1 660 3.67
+## 3     1 800 4.00
+## 4     1 640 3.19
+## 5     0 520 2.93
+## 6     1 760 3.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail}\NormalTok{(dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     admit GRE  GPA
+## 395     1 460 3.99
+## 396     0 620 4.00
+## 397     0 560 3.04
+## 398     0 460 2.63
+## 399     0 700 3.65
+## 400     0 600 3.89
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my.color }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"forestgreen"}\NormalTok{)[dat}\SpecialCharTok{$}\NormalTok{admit}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]}
+\FunctionTok{plot}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{GRE,dat}\SpecialCharTok{$}\NormalTok{admit, }\AttributeTok{pch=}\DecValTok{16}\NormalTok{, }\AttributeTok{col=}\NormalTok{my.color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Module7_Homework_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my.color }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"forestgreen"}\NormalTok{)[dat}\SpecialCharTok{$}\NormalTok{admit}\SpecialCharTok{+}\DecValTok{1}\NormalTok{]}
+\FunctionTok{plot}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{GPA,dat}\SpecialCharTok{$}\NormalTok{admit, }\AttributeTok{pch=}\DecValTok{16}\NormalTok{, }\AttributeTok{col=}\NormalTok{my.color)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Module7_Homework_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# b. Scale Both Variables Using Standardization}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# https://stackoverflow.com/questions/8120984/scaling{-}data{-}in{-}r{-}ignoring{-}specific{-}columns}
+
+\NormalTok{dat.scale }\OtherTok{\textless{}{-}}\NormalTok{ dat}
+\NormalTok{dat.scale[, }\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} \FunctionTok{scale}\NormalTok{(dat.scale[, }\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)])}
+\FunctionTok{head}\NormalTok{(dat.scale)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   admit        GRE        GPA
+## 1     0 -1.7980110  0.5783479
+## 2     1  0.6258844  0.7360075
+## 3     1  1.8378321  1.6031352
+## 4     1  0.4527490 -0.5252692
+## 5     0 -0.5860633 -1.2084607
+## 6     1  1.4915613 -1.0245245
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\#     admit        GRE        GPA}
+    \CommentTok{\# 1     0 {-}1.7980110  0.5783479}
+    \CommentTok{\# 2     1  0.6258844  0.7360075}
+    \CommentTok{\# 3     1  1.8378321  1.6031352}
+    \CommentTok{\# 4     1  0.4527490 {-}0.5252692}
+    \CommentTok{\# 5     0 {-}0.5860633 {-}1.2084607}
+    \CommentTok{\# 6     1  1.4915613 {-}1.0245245}
+
+\CommentTok{\# Verify mean and standard deviations of GRE and GPA post{-}scaling}
+\NormalTok{sd\_GRE }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(dat.scale}\SpecialCharTok{$}\NormalTok{GRE)   }\CommentTok{\# [1] 1}
+\NormalTok{sd\_GPA }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(dat.scale}\SpecialCharTok{$}\NormalTok{GPA)   }\CommentTok{\# [1] 1}
+\NormalTok{mgre1 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(dat.scale}\SpecialCharTok{$}\NormalTok{GRE)     }\CommentTok{\# 0}
+\NormalTok{mgpa2 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(dat.scale}\SpecialCharTok{$}\NormalTok{GPA)     }\CommentTok{\# 0}
+
+
+
+\CommentTok{\# c. Convert Dependent Variable to Type Factor / Run Logistic Regression Model}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Since the dependent variable is categorical and not numeric, }
+\CommentTok{\# convert it to type factor for logistic regression and subsequent analysis.}
+\NormalTok{Response }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(dat.scale}\SpecialCharTok{$}\NormalTok{admit)}
+  \CommentTok{\# Levels: 0 1}
+
+\CommentTok{\# Run Logistic Regression Model}
+\NormalTok{logistic.regression }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(Response }\SpecialCharTok{\textasciitilde{}}\NormalTok{ GRE }\SpecialCharTok{+}\NormalTok{ GPA, }\AttributeTok{family=}\StringTok{"binomial"}\NormalTok{, }\AttributeTok{data=}\NormalTok{dat.scale)}
+\FunctionTok{summary}\NormalTok{(logistic.regression)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = Response ~ GRE + GPA, family = "binomial", data = dat.scale)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.2730  -0.8988  -0.7206   1.3013   2.0620  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  -0.8098     0.1120  -7.233 4.74e-13 ***
+## GRE           0.3108     0.1222   2.544   0.0109 *  
+## GPA           0.2872     0.1216   2.361   0.0182 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 499.98  on 399  degrees of freedom
+## Residual deviance: 480.34  on 397  degrees of freedom
+## AIC: 486.34
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# Deviance Residuals: }
+    \CommentTok{\#   Min       1Q   Median       3Q      Max  }
+    \CommentTok{\# {-}1.2730  {-}0.8988  {-}0.7206   1.3013   2.0620  }
+    \CommentTok{\# }
+    \CommentTok{\# Coefficients:}
+    \CommentTok{\#           Estimate Std.   Error     z value   Pr(\textgreater{}|z|)    }
+    \CommentTok{\# (Intercept)    {-}0.8098     0.1120  {-}7.233 4.74e{-}13 ***}
+    \CommentTok{\#   GRE           0.3108     0.1222   2.544   0.0109 *  }
+    \CommentTok{\#   GPA           0.2872     0.1216   2.361   0.0182 *  }
+    \CommentTok{\#   {-}{-}{-}}
+    \CommentTok{\#   Signif. codes:  0 \textquotesingle{}***\textquotesingle{} 0.001 \textquotesingle{}**\textquotesingle{} 0.01 \textquotesingle{}*\textquotesingle{} 0.05 \textquotesingle{}.\textquotesingle{} 0.1 \textquotesingle{} \textquotesingle{} 1}
+    \CommentTok{\# }
+    \CommentTok{\# (Dispersion parameter for binomial family taken to be 1)}
+    \CommentTok{\# }
+    \CommentTok{\# Null deviance: 499.98  on 399  degrees of freedom}
+    \CommentTok{\# Residual deviance: 480.34  on 397  degrees of freedom}
+    \CommentTok{\# AIC: 486.34}
+    \CommentTok{\# }
+    \CommentTok{\# Number of Fisher Scoring iterations: 4}
+
+
+\CommentTok{\# LR Model Conclusions:  }
+    \CommentTok{\# 1. GRE B0 = 0.311 states for every additional point earned in the GRE test }
+    \CommentTok{\#   the probability of acceptance to the university increases by that amount. }
+    \CommentTok{\# 2. GPA B0 = 0.287 states for every additional point added to a student\textquotesingle{}s GPA}
+    \CommentTok{\#   the probability of acceptance to the university increases by that amount. }
+
+
+\CommentTok{\# ******************************************}
+\CommentTok{\# Questions}
+\CommentTok{\# ******************************************}
+
+\CommentTok{\# 1.Provide an interpretation for the intercept coefficient. }
+\CommentTok{\#   What does it mean if both predictors are equal to 0? }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Note:The dependent variable (admit) of the original data set is a probability}
+\CommentTok{\#     bound by 0 and 1.  The logistic regression model transforms admit to a}
+\CommentTok{\#     continuous variable to match both GPA and GRE via the log of the odds}
+\CommentTok{\#     {-}{-} or, log of p(admit)/(1{-}p(admit)) then computes by minimizing the sum of }
+\CommentTok{\#     the logistic loss.}
+
+\CommentTok{\# {-} The intercept coefficient, B0={-}0.8098.  }
+\CommentTok{\# {-} This is the log odds of acceptance to the university when both predictors = 0.  }
+\CommentTok{\# {-} A negative log odds means that the odds of acceptance is less than 0.50}
+\CommentTok{\# {-} Taking e to the log odds presents an easier view of the number and converts to odds }
+\NormalTok{Odds }\OtherTok{\textless{}{-}} \FunctionTok{exp}\NormalTok{(logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{])  }\CommentTok{\# 0.4449691 }
+
+\CommentTok{\# Perform Verification}
+\NormalTok{B.coefficients }\OtherTok{\textless{}{-}}\NormalTok{ logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients}
+    \CommentTok{\# (Intercept)       GRE         GPA }
+    \CommentTok{\# {-}0.8097503   0.3108184   0.2872087 }
+\NormalTok{lodds0 }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{c}\NormalTok{(B.coefficients[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\NormalTok{B.coefficients[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{*}\DecValTok{0}\SpecialCharTok{+}\NormalTok{B.coefficients[}\DecValTok{3}\NormalTok{]}\SpecialCharTok{*}\DecValTok{0}\NormalTok{))}
+    \CommentTok{\# [1] {-}0.8097503, this matches the glm model output for B0 (y{-}intercept).  }
+
+
+
+\NormalTok{prob0 }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{+}\FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{lodds0))}
+\NormalTok{probablity.at.intercept }\OtherTok{\textless{}{-}}\NormalTok{ Odds}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{Odds)}
+
+
+
+\CommentTok{\# 2a. Assuming an average value for GRE, calculate the effect of a one unit }
+\CommentTok{\#     increase around the mean for GPA.  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Marginal Effect at the Mean (EAM) is a way to calculate the probability }
+\CommentTok{\# increase given a one unit increase around the mean of the independent variable. }
+
+
+\NormalTok{mgre }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{GRE)   }\CommentTok{\# [1] 587.7}
+\NormalTok{mgre1                   }\CommentTok{\# [1] {-}4.010984e{-}16 or 0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -4.010984e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mgpa }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{GPA)   }\CommentTok{\# [1] 3.3899}
+\NormalTok{mgpa2                   }\CommentTok{\# [1] 2.272705e{-}16 or 0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.272705e-16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meanGPA }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{GPA=}\FunctionTok{c}\NormalTok{(mgpa2}\DecValTok{{-}1}\NormalTok{, mgpa2}\SpecialCharTok{+}\DecValTok{1}\NormalTok{), }\AttributeTok{GRE=}\NormalTok{mgre1)}
+
+\CommentTok{\# With type="response", the function returns PROBABILITIES }
+\NormalTok{pmean1 }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(logistic.regression, }\AttributeTok{newdata=}\NormalTok{meanGPA, }\AttributeTok{type=}\StringTok{"response"}\NormalTok{)}
+\NormalTok{(EAM1 }\OtherTok{\textless{}{-}}\NormalTok{ pmean1[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{pmean1[}\DecValTok{1}\NormalTok{])  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        2 
+## 0.121948
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Conclusion:   }
+\CommentTok{\# 0.121948 is the increase in probability of admission, maintaining a constant average GRE, }
+\CommentTok{\# given a one unit increase in GPA.}
+
+
+
+\CommentTok{\# 2b. Assuming an average value for GPA, calculate the effect of a one unit }
+\CommentTok{\#     increase around the mean for GRE.  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meanGRE }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{GRE=}\FunctionTok{c}\NormalTok{(mgre1}\DecValTok{{-}1}\NormalTok{, mgre1}\SpecialCharTok{+}\DecValTok{1}\NormalTok{), }\AttributeTok{GPA=}\NormalTok{mgpa2)}
+\NormalTok{pmean2 }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(logistic.regression, }\AttributeTok{newdata=}\NormalTok{meanGRE, }\AttributeTok{type=}\StringTok{"response"}\NormalTok{)}
+\NormalTok{(EAM1 }\OtherTok{\textless{}{-}}\NormalTok{ pmean2[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{{-}}\NormalTok{pmean2[}\DecValTok{1}\NormalTok{])  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         2 
+## 0.1318859
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Conclusion: }
+\CommentTok{\# 0.1318859 is the increase in probability of admission, maintaining a constant average GPA,   }
+\CommentTok{\# given a one unit increase in GRE score.}
+
+
+
+\CommentTok{\# 3a. With an average value for GRE, calculate the probability of being admitted }
+\CommentTok{\#     under the following conditions for GPA: 3 SD below mean, 2.5 SD below mean, }
+\CommentTok{\#     2 SD below mean, 1.5 SD below mean, 1 SD below mean, 0.5 SD below mean, Mean score, }
+\CommentTok{\#     0.5 SD above mean, 1 SD above mean, 1.5 SD above mean, 2 SD above mean. }
+\CommentTok{\#     What is the average marginal effect?   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{GPA\_prob\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{GRE=}\NormalTok{mgre1, }\AttributeTok{GPA=}\FunctionTok{c}\NormalTok{(mgpa2}\DecValTok{{-}3}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\FloatTok{{-}2.5}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\DecValTok{{-}2}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\FloatTok{{-}1.5}\SpecialCharTok{*}\NormalTok{sd\_GPA, }
+\NormalTok{                                                  mgpa2}\DecValTok{{-}1}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\FloatTok{{-}0.5}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\DecValTok{{-}0}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\FloatTok{+0.5}\SpecialCharTok{*}\NormalTok{sd\_GPA,}
+\NormalTok{                                                  mgpa2}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\FloatTok{+1.5}\SpecialCharTok{*}\NormalTok{sd\_GPA, mgpa2}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\NormalTok{sd\_GPA))}
+
+\NormalTok{GPA\_probabilities }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(logistic.regression, }\AttributeTok{newdata=}\NormalTok{GPA\_prob\_df, }\AttributeTok{type=}\StringTok{"response"}\NormalTok{)}
+\NormalTok{GPA\_ROw\_Titles }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"{-}3SD"}\NormalTok{, }\StringTok{"{-}2.5SD"}\NormalTok{, }\StringTok{"{-}2SD"}\NormalTok{, }\StringTok{"{-}1.5SD"}\NormalTok{, }\StringTok{"{-}1SD"}\NormalTok{, }\StringTok{"{-}0.5 SD"}\NormalTok{, }\StringTok{"SD"}\NormalTok{, }\StringTok{"+0.5SD"}\NormalTok{, }\StringTok{"+1SD"}\NormalTok{, }\StringTok{"+1.5SD"}\NormalTok{,}
+                    \StringTok{"+2SD"}\NormalTok{)}
+
+
+\CommentTok{\# Conclusion: The probability of being admitted increases with increasing positive}
+\CommentTok{\# sd from the mean of the GPA (with constant GRE at the mean):}
+\NormalTok{GPA\_probabilities\_summary }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(GPA\_ROw\_Titles, GPA\_probabilities)}
+    \CommentTok{\# GPA\_ROw\_Titles GPA\_probabilities  }
+    \CommentTok{\# 1  "{-}3SD"         "0.158240733769537"}
+    \CommentTok{\# 2  "{-}2.5SD"       "0.178319874668119"}
+    \CommentTok{\# 3  "{-}2SD"         "0.200340463497387"}
+    \CommentTok{\# 4  "{-}1.5SD"       "0.224337924193125"}
+    \CommentTok{\# 5  "{-}1SD"         "0.250310104606916"}
+    \CommentTok{\# 6  "{-}0.5 SD"      "0.278210663318401"}
+    \CommentTok{\# 7  "SD"           "0.307943699230024"}
+    \CommentTok{\# 8  "+0.5SD"       "0.339360358993962"}
+    \CommentTok{\# 9  "+1SD"         "0.372258114944254"}
+    \CommentTok{\# 10 "+1.5SD"       "0.40638324989128" }
+    \CommentTok{\# 11 "+2SD"         "0.441436812674739"}
+
+
+\NormalTok{all.effects }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(GPA\_probabilities)}
+\NormalTok{AME }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(all.effects)  }\CommentTok{\# [1] 0.02831961}
+\CommentTok{\# Conclusion: The marginal effect of GPA = 0.02831961, keeping GRE constant at its mean.  }
+
+
+
+\CommentTok{\# 3b. With an average value for GPA, calculate the probability of being admitting under }
+\CommentTok{\#     the following conditions for GRE: 3 SD below mean, 2.5 SD below mean, 2 SD below mean, }
+\CommentTok{\#     1.5 SD below mean, 1 SD below mean, 0.5 SD below mean, Mean score, 0.5 SD above mean, }
+\CommentTok{\#     1 SD above mean, 1.5 SD above mean, 2 SD above mean. }
+\CommentTok{\#     What is the average marginal effect?    }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{GRE\_prob\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{GPA=}\NormalTok{mgpa2, }\AttributeTok{GRE=}\FunctionTok{c}\NormalTok{(mgre1}\DecValTok{{-}3}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\FloatTok{{-}2.5}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\DecValTok{{-}2}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\FloatTok{{-}1.5}\SpecialCharTok{*}\NormalTok{sd\_GRE, }
+\NormalTok{                                           mgre1}\DecValTok{{-}1}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\FloatTok{{-}0.5}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\DecValTok{{-}0}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\FloatTok{+0.5}\SpecialCharTok{*}\NormalTok{sd\_GRE,}
+\NormalTok{                                           mgre1}\SpecialCharTok{+}\DecValTok{1}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\FloatTok{+1.5}\SpecialCharTok{*}\NormalTok{sd\_GRE, mgre1}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\NormalTok{sd\_GRE))}
+
+\NormalTok{GRE\_probabilities }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(logistic.regression, }\AttributeTok{newdata=}\NormalTok{GRE\_prob\_df, }\AttributeTok{type=}\StringTok{"response"}\NormalTok{)}
+\NormalTok{GRE\_ROw\_Titles }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"{-}3SD"}\NormalTok{, }\StringTok{"{-}2.5SD"}\NormalTok{, }\StringTok{"{-}2SD"}\NormalTok{, }\StringTok{"{-}1.5SD"}\NormalTok{, }\StringTok{"{-}1SD"}\NormalTok{, }\StringTok{"{-}0.5 SD"}\NormalTok{, }\StringTok{"SD"}\NormalTok{, }\StringTok{"+0.5SD"}\NormalTok{, }\StringTok{"+1SD"}\NormalTok{, }\StringTok{"+1.5SD"}\NormalTok{,}
+                    \StringTok{"+2SD"}\NormalTok{)}
+
+
+\CommentTok{\# Conclusion: The probability of being admitted increases with increasing positive}
+\CommentTok{\# sd from the mean of GRE score (with constant GPA at the mean):}
+\NormalTok{GRE\_probabilities\_summary }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(GRE\_ROw\_Titles, GRE\_probabilities)}
+    \CommentTok{\# GRE\_ROw\_Titles GRE\_probabilities  }
+    \CommentTok{\# 1  "{-}3SD"         "0.149032987735846"}
+    \CommentTok{\# 2  "{-}2.5SD"       "0.169835089498502"}
+    \CommentTok{\# 3  "{-}2SD"         "0.192882628317169"}
+    \CommentTok{\# 4  "{-}1.5SD"       "0.218235632202989"}
+    \CommentTok{\# 5  "{-}1SD"         "0.245905794139975"}
+    \CommentTok{\# 6  "{-}0.5 SD"      "0.275846354162737"}
+    \CommentTok{\# 7  "SD"           "0.307943699230024"}
+    \CommentTok{\# 8  "+0.5SD"       "0.342011944731309"}
+    \CommentTok{\# 9  "+1SD"         "0.377791711245609"}
+    \CommentTok{\# 10 "+1.5SD"       "0.414954033958035"}
+    \CommentTok{\# 11 "+2SD"         "0.453109832091711"}
+
+
+\NormalTok{all.effects2 }\OtherTok{\textless{}{-}} \FunctionTok{diff}\NormalTok{(GRE\_probabilities)}
+\NormalTok{AME2 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(all.effects2)  }\CommentTok{\# [1] 0.03040768}
+\CommentTok{\# Conclusion: The marginal effect of GRE = 0.03040768, keeping GPA constant at its mean.  }
+
+
+
+
+\CommentTok{\# 4.    How many standard deviations above the mean should your GRE score be if your GPA is}
+\CommentTok{\#     0.5 standard deviations below the mean and you\textquotesingle{}d like a 75\% chance of being admitted? }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Givens: }
+\CommentTok{\# 1. P = 0.75 that y=1}
+\CommentTok{\# 2. GPA = mgpa2 {-} 0.5*sd\_GPA}
+
+\CommentTok{\# Unknowns:}
+\CommentTok{\# 1. x = \# of sd above sd\_GRE; GRE = mgre1 + x*sd\_GRE}
+
+\CommentTok{\# Solution:}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FloatTok{0.75}
+\NormalTok{GPA.prob4 }\OtherTok{=}\NormalTok{ mgpa2}\FloatTok{{-}0.5}\SpecialCharTok{*}\NormalTok{sd\_GPA  }\CommentTok{\# [1] {-}0.5 }
+\NormalTok{log.odds4 }\OtherTok{=} \FunctionTok{log}\NormalTok{(p}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{p))      }\CommentTok{\# [1] 1.098612}
+\NormalTok{B.coefficients[}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       GPA 
+## 0.2872087
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X1 }\OtherTok{\textless{}{-}}\NormalTok{ (log.odds4}\SpecialCharTok{{-}}\NormalTok{B.coefficients[}\DecValTok{3}\NormalTok{]}\SpecialCharTok{*}\NormalTok{GPA.prob4}\SpecialCharTok{{-}}\NormalTok{B.coefficients[}\DecValTok{1}\NormalTok{])}\SpecialCharTok{/}\NormalTok{B.coefficients[}\DecValTok{2}\NormalTok{]}
+    \CommentTok{\# 7.063839 is the value for X1 (this seems way too high, imo)}
+\CommentTok{\# To find the number of SDs above the mean, }
+\NormalTok{GRE\_SD\_above\_mean }\OtherTok{\textless{}{-}}\NormalTok{ (X1 }\SpecialCharTok{{-}}\NormalTok{ mgre1)}\SpecialCharTok{/}\NormalTok{sd\_GRE }\CommentTok{\# (7.06{-}0)/1}
+
+\CommentTok{\# Therefore, must be 7.1 standard deviations above mean GRE score to have a 75\% probability}
+\CommentTok{\# of admittance with a GPA 0.5 standard deviations below its mean.  }
+
+
+\CommentTok{\# 5.    Multiply the intercept by {-}1. Divide this value by the sum of the two slope coefficients. }
+\CommentTok{\#     Use this result as values for an observation of GRE and GPA and calculate the output from }
+\CommentTok{\#     the model. What\textquotesingle{}s your interpretation? }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{GRE.GPA.Value }\OtherTok{\textless{}{-}}\NormalTok{ (logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{*{-}}\DecValTok{1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{(logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{+}
+\NormalTok{                                                    logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{3}\NormalTok{])}
+    \CommentTok{\# (Intercept) }
+    \CommentTok{\# 1.354036 }
+
+\NormalTok{log.odds5 }\OtherTok{\textless{}{-}}\NormalTok{ logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{+}\NormalTok{logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{]}\SpecialCharTok{*}\NormalTok{GRE.GPA.Value}\SpecialCharTok{+}
+\NormalTok{  logistic.regression}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{3}\NormalTok{]}\SpecialCharTok{*}\NormalTok{GRE.GPA.Value}
+    \CommentTok{\# {-}5.551115e{-}17 }
+\FunctionTok{exp}\NormalTok{(log.odds5)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (Intercept) 
+##           1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p5 }\OtherTok{\textless{}{-}} \FunctionTok{exp}\NormalTok{(log.odds5)}\SpecialCharTok{/}\DecValTok{2}
+    \CommentTok{\# (Intercept) }
+    \CommentTok{\# 0.5}
+
+\CommentTok{\# Conclusion:}
+\CommentTok{\# logodds = 0}
+\CommentTok{\# logodds = ln(p(y)/(1{-}py)) = 0}
+\CommentTok{\# Taking e\^{}  to both sides yields, 1 = p(y)/(1{-}py)}
+\CommentTok{\# Probability of acceptance at these conditions is 50\%.  }
+
+
+
+\CommentTok{\# 6.    Generate predictions using a 50\% classification boundary. }
+\CommentTok{\#     Report overall accuracy and balance accuracy. }
+\CommentTok{\#     Feel free to share any other metrics you find interesting. }
+\CommentTok{\#     Are you satisfied with this classification boundary? }
+\CommentTok{\#     If yes, say why. If not, evaluate results when using another classification boundary. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Define Log of Odds \textgreater{}= 0.5 as pass, 1}
+\CommentTok{\#        Log of Odds \textless{}  0.5 as fail, 0}
+
+\NormalTok{predictions }\OtherTok{\textless{}{-}}\NormalTok{ logistic.regression}\SpecialCharTok{$}\NormalTok{fitted.values}
+\NormalTok{predictions[predictions}\SpecialCharTok{\textgreater{}=}\FloatTok{0.5}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{predictions[predictions}\SpecialCharTok{\textless{}}\FloatTok{0.5}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{0}
+\NormalTok{predictions }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(predictions)}
+\FunctionTok{table}\NormalTok{(predictions, dat}\SpecialCharTok{$}\NormalTok{admit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            
+## predictions   0   1
+##           0 263 118
+##           1  10   9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{\# predictions      0   1}
+    \CommentTok{\#               0 263 118}
+    \CommentTok{\#               1  10   9}
+\FunctionTok{library}\NormalTok{(caret)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: ggplot2
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{confusionMatrix}\NormalTok{(predictions, Response, }\AttributeTok{mode=}\StringTok{"prec\_recall"}\NormalTok{, }\AttributeTok{positive =} \StringTok{"1"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 263 118
+##          1  10   9
+##                                           
+##                Accuracy : 0.68            
+##                  95% CI : (0.6318, 0.7255)
+##     No Information Rate : 0.6825          
+##     P-Value [Acc > NIR] : 0.5665          
+##                                           
+##                   Kappa : 0.0443          
+##                                           
+##  Mcnemar's Test P-Value : <2e-16          
+##                                           
+##               Precision : 0.47368         
+##                  Recall : 0.07087         
+##                      F1 : 0.12329         
+##              Prevalence : 0.31750         
+##          Detection Rate : 0.02250         
+##    Detection Prevalence : 0.04750         
+##       Balanced Accuracy : 0.51712         
+##                                           
+##        'Positive' Class : 1               
+## 
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{\# Accuracy : 0.68            }
+  \CommentTok{\# 95\% CI : (0.6318, 0.7255)}
+  \CommentTok{\# No Information Rate : 0.6825          }
+  \CommentTok{\# P{-}Value [Acc \textgreater{} NIR] : 0.5665          }
+  \CommentTok{\# }
+  \CommentTok{\# Kappa : 0.0443          }
+  \CommentTok{\# }
+  \CommentTok{\# Mcnemar\textquotesingle{}s Test P{-}Value : \textless{}2e{-}16          }
+  \CommentTok{\#                                           }
+  \CommentTok{\#               Precision : 0.47368         }
+  \CommentTok{\#                  Recall : 0.07087         }
+  \CommentTok{\#                      F1 : 0.12329         }
+  \CommentTok{\#              Prevalence : 0.31750         }
+  \CommentTok{\#          Detection Rate : 0.02250         }
+  \CommentTok{\#    Detection Prevalence : 0.04750         }
+  \CommentTok{\#       Balanced Accuracy : 0.51712 }
+
+
+\CommentTok{\# 7.    Plot an ROC curve and report the area under the curve. }
+\CommentTok{\#     Based on this and your classification predictions, how do you evaluate the ability of this }
+\CommentTok{\#     model to use GRE score and GPA to differentiate between whether students will be admitted?  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(AUC)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## AUC 0.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## Type AUCNews() to see the change log and ?AUC to get an overview.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'AUC'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:caret':
+## 
+##     sensitivity, specificity
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OtherTok{\textless{}{-}} \FunctionTok{roc}\NormalTok{(predictions, Response) }\CommentTok{\# Remember: Since the dependent variable is }
+\CommentTok{\# categorical and not numeric, }
+\CommentTok{\# converted it to type factor above for }
+\CommentTok{\# logistic regression and subsequent analysis by}
+\CommentTok{\# Response \textless{}{-} as.factor(dat$Pass)}
+
+
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{roc}\NormalTok{(predictions, Response))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Module7_Homework_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{auc}\NormalTok{(r)       }\CommentTok{\# [1] 0.5171181}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5171181
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# The area under the ROC curve can be computed to suggest how useful our model }
+\CommentTok{\# is for distinguishing these two classes. The following scale can be used to }
+\CommentTok{\# interpret area under the curve:}
+\CommentTok{\#     0.517: Random model, no ability to distinguish}
+
+
+
+
+
+
+
+
+
+\CommentTok{\# rm(list = ls())      Removes global environment}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
