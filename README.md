@@ -21,7 +21,7 @@ Use student GRE scores and GPA  to determine if a student was admitted (binary) 
 3. Set the dependent variable "admit" as a factor variable and perform logistic regression with two predictors: GRE and GPA. 
 
 ### Results
-All code to complete this work is found in the attached [notebook](Module7_Homework.R) or with diagrams[Word File](Module7_Homework.docx).
+All code to complete this work is found in the attached [notebook](Module7_Homework.R) or with diagrams [Word File](Module7_Homework.docx).
 
 
 
